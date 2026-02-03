@@ -36,10 +36,10 @@ jobs:
         run: |
           git clone https://github.com/novnc/noVNC.git C:\noVNC
 
-      - name: Start noVNC Web
+      - name: Start noVNC Web (background)
         run: |
           cd C:\noVNC
-          python -m http.server 6080
+          Start-Process python -ArgumentList "-m http.server 6080"
 
       - name: Install Cloudflare Tunnel
         run: |
